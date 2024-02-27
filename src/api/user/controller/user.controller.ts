@@ -48,7 +48,7 @@ export class UserController {
     @PublicPermission()
     @Post('login')
     @ApiOperation({
-        summary: 'access token by email and password',
+        summary: 'access token by email and password (login with email: superAdmin@gmail.com and password: 123)',
         description: 'login api for user',
         operationId: 'login',
     })
