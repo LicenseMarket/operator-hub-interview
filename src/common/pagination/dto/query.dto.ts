@@ -24,6 +24,7 @@ export class PaginationQueryDto {
       type: 'object',
       example: orderByExample,
     },
+    description: 'you can set any filed of model you trying to sort like {"id": "asc"}',
     required: false,
   })
   @Allow()
@@ -38,6 +39,7 @@ export class PaginationQueryDto {
       type: 'object',
       example: whereExample,
     },
+    description: `filter properties are: label, operator, lte, gte; property label and operator is array of ids`,
     required: false,
   })
   @Allow()
@@ -52,6 +54,7 @@ export class PaginationQueryDto {
       type: 'object',
       example: whereExample,
     },
+    description: `search properties are: name, email, mobile, order_number,`,
     required: false,
   })
   @Allow()

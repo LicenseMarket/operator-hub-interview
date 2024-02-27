@@ -58,6 +58,12 @@ export class OrderRepository extends BaseRepository<
     pagination(
         paginationQueryDto: PaginationQueryDto,
     ): Promise<PaginatedResult<Order>> {
+        this.prisma.getClient().order.findMany({
+            include: {
+                Label: true,
+                assignedTo: true,
+            }
+        })
         return this.paginationService.paginate(
             this.prisma.getClient().order,
             paginationQueryDto,

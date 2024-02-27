@@ -36,12 +36,10 @@ export class PaginationService {
                 ? paginationQueryDto.convertedSearch.OR
                 : []),
             ],
-            is_deleted: false,
             ...paginationQueryDto.convertedFilter,
           };
         } else {
           where = {
-            is_deleted: false,
             ...paginationQueryDto.convertedFilter,
           };
         }

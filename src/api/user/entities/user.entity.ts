@@ -3,6 +3,7 @@ import { Role, User } from 'prisma/prisma-client'
 import { BaseEntity } from 'src/common/entities/base.entity'
 
 export class UserEntity extends BaseEntity implements User {
+    avatar: string;
     @ApiProperty() id: number
     @ApiProperty({ required: false, default: false }) deleted: Date
     @ApiProperty() email: string

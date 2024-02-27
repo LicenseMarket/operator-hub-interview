@@ -3,6 +3,8 @@ import { $Enums, Order } from 'prisma/prisma-client';
 import { BaseEntity } from 'src/common/entities/base.entity';
 
 export class OrderEntity extends BaseEntity implements Order {
+    email: string;
+    mobile: string;
     @ApiProperty() name: string;
     @ApiProperty() status: $Enums.OrderStatus;
     @ApiProperty() id: number;

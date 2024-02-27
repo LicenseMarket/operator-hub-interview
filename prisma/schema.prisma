@@ -15,6 +15,7 @@ model User {
   email    String     @unique
   password String
   username String
+  avatar   String?
   deleted  DateTime?
   roles    RoleUser[]
   Product  Product[]
@@ -48,6 +49,8 @@ model Order {
   product     Product   @relation(fields: [productId], references: [id])
   assignedTo  User      @relation(fields: [userId], references: [id])
   name        String
+  email       String
+  mobile      String
   status      OrderStatus
   orderTime   DateTime
   dueTime     DateTime
@@ -55,6 +58,7 @@ model Order {
   assignee    Int
   productId   Int
   userId      Int
+  Label       Label[]
 
   @@index([assignee])
 }
@@ -88,9 +92,10 @@ model Route {
 
 model Label {
   id      Int       @id @default(autoincrement())
-  name    String
+  name    String    @unique
   color   String
   deleted DateTime?
+  Order   Order[]
 }
 
 enum RequestMethod {
@@ -102,11 +107,9 @@ enum RequestMethod {
 }
 
 enum OrderStatus {
-  GET
-  POST
-  DELETE
-  PATCH
-  PUT
+  COMPLETE
+  PENDING
+  CANCELED
 }
 
 enum ReadAccess {

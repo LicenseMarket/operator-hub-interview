@@ -27,58 +27,58 @@ import { RoleService } from '../service/role.service'
 export class RoleController {
     constructor(private readonly roleService: RoleService) {}
 
-    @Post()
-    @ApiOperation({
-        summary: 'create role',
-        description: 'create role',
-        operationId: 'createRole',
-    })
-    @ApiCreatedResponse({ type: RoleEntity })
-    create(@Body() createRoleDto: CreateRoleDto) {
-        return this.roleService.create(createRoleDto)
-    }
+    // @Post()
+    // @ApiOperation({
+    //     summary: 'create role',
+    //     description: 'create role',
+    //     operationId: 'createRole',
+    // })
+    // @ApiCreatedResponse({ type: RoleEntity })
+    // create(@Body() createRoleDto: CreateRoleDto) {
+    //     return this.roleService.create(createRoleDto)
+    // }
 
-    @Get()
-    @ApiOperation({
-        summary: 'find all role',
-        description: 'find all role',
-        operationId: 'findAllRole',
-    })
-    @ApiOkResponse({ type: RoleEntity, isArray: true })
-    findAll() {
-        return this.roleService.findAll()
-    }
+    // @Get()
+    // @ApiOperation({
+    //     summary: 'find all role',
+    //     description: 'find all role',
+    //     operationId: 'findAllRole',
+    // })
+    // @ApiOkResponse({ type: RoleEntity, isArray: true })
+    // findAll() {
+    //     return this.roleService.findAll()
+    // }
 
-    @Get(':id')
-    @ApiOperation({
-        summary: 'find one role by id',
-        description: 'find one role by id',
-        operationId: 'findOneRole',
-    })
-    @ApiOkResponse({ type: RoleEntity })
-    findOne(@Param('id') id: string) {
-        return this.roleService.findOne(+id)
-    }
+    // @Get(':id')
+    // @ApiOperation({
+    //     summary: 'find one role by id',
+    //     description: 'find one role by id',
+    //     operationId: 'findOneRole',
+    // })
+    // @ApiOkResponse({ type: RoleEntity })
+    // findOne(@Param('id') id: string) {
+    //     return this.roleService.findOne(+id)
+    // }
 
-    @Patch(':id')
-    @ApiOperation({
-        summary: 'update role by id',
-        description: 'update role by id',
-        operationId: 'updateOneRole',
-    })
-    @ApiOkResponse({ type: RoleEntity })
-    update(@Param('id') id: string, @Body() updateRoleDto: UpdateRoleDto) {
-        return this.roleService.update(+id, updateRoleDto)
-    }
+    // @Patch(':id')
+    // @ApiOperation({
+    //     summary: 'update role by id',
+    //     description: 'update role by id',
+    //     operationId: 'updateOneRole',
+    // })
+    // @ApiOkResponse({ type: RoleEntity })
+    // update(@Param('id') id: string, @Body() updateRoleDto: UpdateRoleDto) {
+    //     return this.roleService.update(+id, updateRoleDto)
+    // }
 
-    @Delete(':id')
-    @ApiOperation({
-        summary: 'delete role by id',
-        description: 'delete role by id',
-        operationId: 'deleteOneRole',
-    })
-    @ApiOkResponse({ type: RoleEntity })
-    remove(@Param('id') id: string) {
-        return this.roleService.remove(+id)
-    }
+    // @Delete(':id')
+    // @ApiOperation({
+    //     summary: 'delete role by id',
+    //     description: 'delete role by id',
+    //     operationId: 'deleteOneRole',
+    // })
+    // @ApiOkResponse({ type: RoleEntity })
+    // remove(@Param('id') id: string) {
+    //     return this.roleService.remove(+id)
+    // }
 }
