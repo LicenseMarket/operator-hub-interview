@@ -49,16 +49,6 @@ export class RoleController {
         return this.roleService.findAll()
     }
 
-    @Get('page')
-    @ApiOperation({
-        summary: 'role pagination',
-        description: 'role pagination',
-        operationId: 'paginationRole',
-    })
-    pagination(@Query() paginationQueryDto: PaginationQueryDto) {
-        return this.roleService.pagination(paginationQueryDto)
-    }
-
     @Get(':id')
     @ApiOperation({
         summary: 'find one role by id',

@@ -111,18 +111,4 @@ export class PermissionService extends BaseService<
             throw error
         }
     }
-
-    async pagination(paginationQueryDto: PaginationQueryDto) {
-        try {
-            if (paginationQueryDto.where) {
-                let whereCondition = {
-                    id: +paginationQueryDto.where.id || undefined,
-                }
-                paginationQueryDto.where = whereCondition
-            }
-            return this.permissionRepository.pagination(paginationQueryDto)
-        } catch (error) {
-            throw error
-        }
-    }
 }

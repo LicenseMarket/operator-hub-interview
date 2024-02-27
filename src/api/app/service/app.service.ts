@@ -4,8 +4,8 @@ import { PrismaService } from 'src/prisma/service/prisma.service';
 @Injectable()
 export class AppService {
     constructor(prismaService: PrismaService) {
-        runMigrations(prismaService);
-        runSeed(prismaService);
+        // runMigrations(prismaService);
+        // runSeed(prismaService);
     }
     getHello(): string {
         return 'Hello World!';

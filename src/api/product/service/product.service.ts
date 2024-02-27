@@ -71,22 +71,4 @@ export class ProductService extends BaseService<
             throw error
         }
     }
-
-    async pagination(paginationQueryDto: PaginationQueryDto) {
-        try {
-            if (paginationQueryDto.where) {
-                let whereCondition = {
-                    id: +paginationQueryDto.where.id || undefined,
-                    name: paginationQueryDto.where.name,
-                    assignee: {
-                        id: +paginationQueryDto.where.assignee,
-                    },
-                }
-                paginationQueryDto.where = whereCondition
-            }
-            return this.productRepository.pagination(paginationQueryDto)
-        } catch (error) {
-            throw error
-        }
-    }
 }

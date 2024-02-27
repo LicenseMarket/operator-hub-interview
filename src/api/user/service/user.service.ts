@@ -158,26 +158,26 @@ export class UserService extends BaseService<
         }
     }
 
-    async pagination(paginationQueryDto: PaginationQueryDto) {
-        try {
-            if (paginationQueryDto.where) {
-                let whereCondition = {
-                    id: +paginationQueryDto.where.id || undefined,
-                    email: paginationQueryDto.where.email,
-                    name: paginationQueryDto.where.name,
-                    roles: {
-                        some: {
-                            role: {
-                                name: paginationQueryDto.where.role_name,
-                            },
-                        },
-                    },
-                }
-                paginationQueryDto.where = whereCondition
-            }
-            return this.userRepository.pagination(paginationQueryDto)
-        } catch (error) {
-            throw error
-        }
-    }
+    // async pagination(paginationQueryDto: PaginationQueryDto) {
+    //     try {
+    //         if (paginationQueryDto.where) {
+    //             let whereCondition = {
+    //                 id: +paginationQueryDto.where.id || undefined,
+    //                 email: paginationQueryDto.where.email,
+    //                 name: paginationQueryDto.where.name,
+    //                 roles: {
+    //                     some: {
+    //                         role: {
+    //                             name: paginationQueryDto.where.role_name,
+    //                         },
+    //                     },
+    //                 },
+    //             }
+    //             paginationQueryDto.where = whereCondition
+    //         }
+    //         return this.userRepository.pagination(paginationQueryDto)
+    //     } catch (error) {
+    //         throw error
+    //     }
+    // }
 }

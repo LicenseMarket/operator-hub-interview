@@ -75,19 +75,4 @@ export class RoleService extends BaseService<
             throw error
         }
     }
-
-    async pagination(paginationQueryDto: PaginationQueryDto) {
-        try {
-            if (paginationQueryDto.where) {
-                let whereCondition = {
-                    id: +paginationQueryDto.where.id || undefined,
-                    name: paginationQueryDto.where.name,
-                }
-                paginationQueryDto.where = whereCondition
-            }
-            return this.roleRepository.pagination(paginationQueryDto)
-        } catch (error) {
-            throw error
-        }
-    }
 }

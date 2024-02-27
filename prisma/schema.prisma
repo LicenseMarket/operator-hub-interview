@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:123@database.licensemarket.svc:5432/lcmarket"
+  url      = "postgresql://postgres:123@8c8564af-f06b-49f7-be56-e61ee37b951b.hsvc.ir:32296/lcmarket"
 }
 
 model User {
@@ -47,6 +47,8 @@ model Order {
   orderNumber String    @unique
   product     Product   @relation(fields: [productId], references: [id])
   assignedTo  User      @relation(fields: [userId], references: [id])
+  name        String
+  status      OrderStatus
   orderTime   DateTime
   dueTime     DateTime
   deleted     DateTime?
@@ -84,7 +86,22 @@ model Route {
   permissions Permission[]
 }
 
+model Label {
+  id      Int       @id @default(autoincrement())
+  name    String
+  color   String
+  deleted DateTime?
+}
+
 enum RequestMethod {
+  GET
+  POST
+  DELETE
+  PATCH
+  PUT
+}
+
+enum OrderStatus {
   GET
   POST
   DELETE

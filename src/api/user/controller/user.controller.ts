@@ -55,16 +55,6 @@ export class UserController {
         return this.userService.findAll()
     }
 
-    @Get('page')
-    @ApiOperation({
-        summary: 'user pagination',
-        description: 'user pagination',
-        operationId: 'paginationUser',
-    })
-    pagination(@Query() paginationQueryDto: PaginationQueryDto) {
-        return this.userService.pagination(paginationQueryDto)
-    }
-
     @Public()
     @PublicPermission()
     @Post('login')

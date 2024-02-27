@@ -112,25 +112,25 @@ export class OrderService extends BaseService<
 
     async pagination(paginationQueryDto: PaginationQueryDto) {
         try {
-            if (paginationQueryDto.where) {
+            if (paginationQueryDto.convertedFilter) {
                 let whereCondition = {
-                    id: +paginationQueryDto.where.id || undefined,
+                    id: +paginationQueryDto.convertedFilter.id || undefined,
                     orderNumber:
-                        paginationQueryDto.where.orderNumber || undefined,
+                        paginationQueryDto.convertedFilter.orderNumber || undefined,
                     assignedTo: {
-                        email: paginationQueryDto.where.email || undefined,
+                        email: paginationQueryDto.convertedFilter.email || undefined,
                     },
                     dueTime: {},
                 }
-                if (paginationQueryDto.where.gt)
+                if (paginationQueryDto.convertedFilter.gt)
                     whereCondition.dueTime['gt'] = new Date(
-                        paginationQueryDto.where.gt,
+                        paginationQueryDto.convertedFilter.gt,
                     ).toISOString()
-                if (paginationQueryDto.where.lte)
+                if (paginationQueryDto.convertedFilter.lte)
                     whereCondition.dueTime['lte'] = new Date(
-                        paginationQueryDto.where.lte,
+                        paginationQueryDto.convertedFilter.lte,
                     ).toISOString()
-                paginationQueryDto.where = whereCondition
+                paginationQueryDto.convertedFilter = whereCondition
             }
             return this.orderRepository.pagination(paginationQueryDto)
         } catch (error) {

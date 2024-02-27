@@ -11,7 +11,7 @@ async function main() {
     const roles = await ensureRolesExist();
     await createUser(roles);
     // Extract paths from the OpenAPI specification
-    const paths = api.paths;
+    const paths = [];
 
     // Convert OpenAPI paths into Route records
     const routes = createRouteRecords(paths);

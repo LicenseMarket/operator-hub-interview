@@ -29,74 +29,74 @@ import { UserInterface } from 'src/common/interfaces/user.interface'
 export class ProductController {
     constructor(private readonly productService: ProductService) {}
 
-    @Post()
-    @ApiCreatedResponse({ type: ProductEntity })
-    @ApiOperation({
-        summary: 'create product',
-        description: 'create product',
-        operationId: 'createProduct',
-    })
-    create(
-        @Body() createProductDto: CreateProductDto,
-        @GetUser() userInterface: UserInterface,
-    ) {
-        return this.productService.create(createProductDto, userInterface)
-    }
+    // @Post()
+    // @ApiCreatedResponse({ type: ProductEntity })
+    // @ApiOperation({
+    //     summary: 'create product',
+    //     description: 'create product',
+    //     operationId: 'createProduct',
+    // })
+    // create(
+    //     @Body() createProductDto: CreateProductDto,
+    //     @GetUser() userInterface: UserInterface,
+    // ) {
+    //     return this.productService.create(createProductDto, userInterface)
+    // }
 
-    @Get()
-    @ApiOkResponse({ type: ProductEntity, isArray: true })
-    @ApiOperation({
-        summary: 'find all product',
-        description: 'find all product',
-        operationId: 'findAllProduct',
-    })
-    findAll() {
-        return this.productService.findAll()
-    }
+    // @Get()
+    // @ApiOkResponse({ type: ProductEntity, isArray: true })
+    // @ApiOperation({
+    //     summary: 'find all product',
+    //     description: 'find all product',
+    //     operationId: 'findAllProduct',
+    // })
+    // findAll() {
+    //     return this.productService.findAll()
+    // }
 
-    @Get('page')
-    @ApiOperation({
-        summary: 'product pagination',
-        description: 'product pagination',
-        operationId: 'paginationProduct',
-    })
-    pagination(@Query() paginationQueryDto: PaginationQueryDto) {
-        return this.productService.pagination(paginationQueryDto)
-    }
+    // @Get('page')
+    // @ApiOperation({
+    //     summary: 'product pagination',
+    //     description: 'product pagination',
+    //     operationId: 'paginationProduct',
+    // })
+    // pagination(@Query() paginationQueryDto: PaginationQueryDto) {
+    //     return this.productService.pagination(paginationQueryDto)
+    // }
 
-    @Get(':id')
-    @ApiOperation({
-        summary: 'find one product by id',
-        description: 'find one product by id',
-        operationId: 'findOneProduct',
-    })
-    @ApiOkResponse({ type: ProductEntity })
-    findOne(@Param('id') id: string) {
-        return this.productService.findOne(+id)
-    }
+    // @Get(':id')
+    // @ApiOperation({
+    //     summary: 'find one product by id',
+    //     description: 'find one product by id',
+    //     operationId: 'findOneProduct',
+    // })
+    // @ApiOkResponse({ type: ProductEntity })
+    // findOne(@Param('id') id: string) {
+    //     return this.productService.findOne(+id)
+    // }
 
-    @Patch(':id')
-    @ApiOperation({
-        summary: 'update product by id',
-        description: 'update product by id',
-        operationId: 'updateOneProduct',
-    })
-    @ApiOkResponse({ type: ProductEntity })
-    update(
-        @Param('id') id: string,
-        @Body() updateProductDto: UpdateProductDto,
-    ) {
-        return this.productService.update(+id, updateProductDto)
-    }
+    // @Patch(':id')
+    // @ApiOperation({
+    //     summary: 'update product by id',
+    //     description: 'update product by id',
+    //     operationId: 'updateOneProduct',
+    // })
+    // @ApiOkResponse({ type: ProductEntity })
+    // update(
+    //     @Param('id') id: string,
+    //     @Body() updateProductDto: UpdateProductDto,
+    // ) {
+    //     return this.productService.update(+id, updateProductDto)
+    // }
 
-    @Delete(':id')
-    @ApiOperation({
-        summary: 'delete product by id',
-        description: 'delete product by id',
-        operationId: 'deleteOneProduct',
-    })
-    @ApiOkResponse({ type: ProductEntity })
-    remove(@Param('id') id: string) {
-        return this.productService.remove(+id)
-    }
+    // @Delete(':id')
+    // @ApiOperation({
+    //     summary: 'delete product by id',
+    //     description: 'delete product by id',
+    //     operationId: 'deleteOneProduct',
+    // })
+    // @ApiOkResponse({ type: ProductEntity })
+    // remove(@Param('id') id: string) {
+    //     return this.productService.remove(+id)
+    // }
 }
