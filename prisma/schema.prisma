@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:o4hXCb95qJEXln2ju2kc1NR8Iqje8L7zFkx6ZiYGp3H9KRWx0B@8c8564af-f06b-49f7-be56-e61ee37b951b.hsvc.ir:32296/lcmarket"
+  url      = "postgresql://postgres:o4hXCb95qJEXln2ju2kc1NR8Iqje8L7zFkx6ZiYGp3H9KRWx0B@8c8564af-f06b-49f7-be56-e61ee37b951b.hsvc.ir:31581/lcmarket"
 }
 
 model User {
